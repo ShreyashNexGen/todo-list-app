@@ -1,0 +1,79 @@
+<!-- <div class="todo-container">
+    <h1 class="todo-title">Todo List</h1>
+    <div class="input-container">
+        <input type="text" #todoText placeholder="Add Todo">
+        <button (click)="addTask(todoText.value)">Add</button>
+    </div>
+    <ul>
+        <li *ngFor="let todoItem of todoList">
+            <input
+                type="checkbox"
+                [(checked)]="todoItem.completed"
+                (change)="toggleCompleted(todoItem.id)"
+            />
+            <span [class.completed]="todoItem.completed">{{ todoItem.task }}</span>
+            <button (click)="deleteTask(todoItem.id)">Delete</button>
+        </li>
+    </ul>
+</div> -->
+<!-- <div class="todo-container">
+    <h1 class="todo-title">Todo List</h1>
+    
+    <div class="input-container">
+      <input type="text" #todoText placeholder="Add Todo...">
+      <button (click)="addTask(todoText.value)">Add</button>
+    </div>
+    
+    <div *ngFor="let group of getGroupedTasks() | keyvalue">
+      <h2>{{ group.key }}</h2> 
+      
+      <ul>
+        <li *ngFor="let todoItem of group.value">
+          <input
+            type="checkbox"
+            [(checked)]="todoItem.completed"
+            (change)="toggleCompleted(todoItem.id)"
+          />
+          <span [class.completed]="todoItem.completed">{{ todoItem.task }}</span>
+          <button (click)="deleteTask(todoItem.id)">Delete</button>
+        </li>
+      </ul>
+    </div>
+  </div> -->
+  <div class="todo-container">
+    <h1 class="todo-title">Todo List</h1>
+
+    <div *ngIf="!isLoggedIn()">
+        <h2>Login</h2>
+        <input type="text" [(ngModel)]="loginUsername" placeholder="Username">
+        <input type="password" [(ngModel)]="loginPassword" placeholder="Password">
+        <button (click)="login()">Login</button>
+
+        <h2>Signup</h2>
+        <input type="text" [(ngModel)]="signupUsername" placeholder="Username">
+        <input type="password" [(ngModel)]="signupPassword" placeholder="Password">
+        <button (click)="signup()">Signup</button>
+    </div>
+
+    <div *ngIf="isLoggedIn()">
+        <div class="input-container">
+            <input type="text" #todoText placeholder="Add Todo">
+            <button (click)="addTask(todoText.value)">Add</button>
+        </div>
+
+        <div *ngFor="let group of getGroupedTasks() | keyvalue">
+            <h2>{{ group.key }}</h2> <!-- Date heading -->
+            <ul>
+                <li *ngFor="let todoItem of group.value">
+                    <input
+                        type="checkbox"
+                        [(ngModel)]="todoItem.completed"
+                        (change)="toggleCompleted(todoItem.id)"
+                    />
+                    <span [class.completed]="todoItem.completed">{{ todoItem.task }}</span>
+                    <button (click)="deleteTask(todoItem.id)">Delete</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

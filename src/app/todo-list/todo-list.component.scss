@@ -1,0 +1,178 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.todo-container {
+    text-align: center; /* Center the content */
+}
+
+/* Heading Styles */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes colorCycle {
+    0% {
+        color: #6c63ff;
+    }
+    33% {
+        color: #ff4b5c;
+    }
+    66% {
+        color: #6c63ff;
+    }
+    100% {
+        color: #6c63ff;
+    }
+}
+
+.todo-title {
+    font-size: 3.5rem; /* Adjust heading size */
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeInScale 1.5s ease-out, colorCycle 3s infinite ease-in-out;
+    font-family: 'Pacifico', cursive; /* Add a unique font for a creative look */
+    letter-spacing: 0.2rem;
+}
+
+
+/* Input and Button Styles */
+.input-container {
+    display: flex;
+    justify-content: center; /* Center input and button */
+    margin-bottom: 1.5rem; /* Space below input */
+}
+
+input[type="text"] {
+    padding: 1rem; /* Adjust padding */
+    width: 100%;
+    max-width: 40rem; /* Change max-width */
+    border: 0.2rem solid #ccc; /* Use rem for border */
+    border-radius: 0.5rem; /* Use rem for border radius */
+    font-size: 1rem; /* Use rem for font size */
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+    border-color: #6c63ff;
+    outline: none;
+}
+
+button {
+    padding: 1rem 2rem; /* Adjust padding */
+    background-color: #6c63ff;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem; /* Use rem for border radius */
+    cursor: pointer;
+    font-size: 1rem; /* Use rem for font size */
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    margin-left: 1rem; /* Use rem for margin */
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #5848c2;
+}
+
+/* Todo List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 40rem; /* Match with input width */
+    margin: 0 auto; /* Center the list */
+}
+
+li {
+    background-color: #fff;
+    margin-bottom: 1rem; /* Use rem for margin */
+    padding: 1.5rem; /* Use rem for padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.8rem; /* Use rem for border radius */
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+li:hover {
+    transform: translateY(-0.5rem);
+}
+
+span.completed {
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+/* Checkbox Styles */
+input[type="checkbox"] {
+    margin-right: 1rem; /* Use rem for margin */
+    width: 1.8rem; /* Use rem for width */
+    height: 1.8rem; /* Use rem for height */
+    cursor: pointer;
+}
+
+/* Delete Button */
+li button {
+    background-color: #ff4b5c;
+    border: none;
+    padding: 0.5rem 1rem; /* Use rem for padding */
+    border-radius: 0.5rem; /* Use rem for border radius */
+    color: white;
+    font-size: 0.9rem; /* Use rem for font size */
+    transition: background-color 0.3s ease;
+}
+
+li button:hover {
+    background-color: #e04350;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 37.5rem) { /* 600px in rem */
+    button {
+        font-size: 0.875rem; /* Use rem for font size */
+        padding: 0.5rem 1.5rem; /* Use rem for padding */
+    }
+
+    input[type="text"] {
+        font-size: 0.875rem; /* Use rem for font size */
+    }
+
+    li {
+        padding: 0.8rem; /* Use rem for padding */
+    }
+
+    li button {
+        font-size: 0.75rem; /* Use rem for font size */
+    }
+}
+h2 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #000000;
+    text-align: center;
+  }
+  
